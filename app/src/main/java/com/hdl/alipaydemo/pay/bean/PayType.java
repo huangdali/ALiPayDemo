@@ -6,5 +6,5 @@ package com.hdl.alipaydemo.pay.bean;
  */
 
 public enum PayType {
-    ALIPAY, WECHAT
+    ALIPAY, WXPAY
 }

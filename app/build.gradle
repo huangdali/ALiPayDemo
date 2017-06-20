@@ -29,4 +29,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/alipaySingle-20170510.jar')
     compile 'com.github.huangdali:ELog:v2.0.2'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 }

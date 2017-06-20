@@ -10,7 +10,7 @@ import com.hdl.alipaydemo.pay.bean.PayType;
  * Created by HDL on 2017/6/19.
  */
 
-public class PayManager {
+public class PayManager<T> {
     private IPayStrategy payStrategy;
     private Activity context;
 
@@ -20,8 +20,8 @@ public class PayManager {
             case ALIPAY://支付宝支付策略类
                 payStrategy = new ALiPayStrategy();
                 break;
-            case WECHAT://微信支付策略类
-                payStrategy = new WeChatPayStrategy();
+            case WXPAY://微信支付策略类
+                payStrategy = new WXPayStrategy();
                 break;
         }
     }
@@ -31,12 +31,12 @@ public class PayManager {
      * <br/>
      * 支付宝支付见{@link ALiPayStrategy#pay(Activity, String, PayCallback)}
      * <br/>
-     * 微信支付见{@link WeChatPayStrategy#pay(Activity, String, PayCallback)}
+     * 微信支付见{@link WXPayStrategy#pay(Activity, Object, PayCallback)}
      *
      * @param orderInfo 通过服务器加密过的订单信息
      * @param callback  支付进度回调
      */
-    public void pay(String orderInfo, PayCallback callback) {
+    public void pay(T orderInfo, PayCallback callback) {
         payStrategy.pay(context, orderInfo, callback);
     }
 }

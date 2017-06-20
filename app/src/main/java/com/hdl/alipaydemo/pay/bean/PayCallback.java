@@ -1,7 +1,7 @@
 package com.hdl.alipaydemo.pay.bean;
 
 /**
- * 支付回调
+ * 支付过程回调
  * Created by HDL on 2017/6/19.
  */
 
@@ -23,4 +23,9 @@ public interface PayCallback<T> {
      * 支付成功的时候回调
      */
     void onSuccess(T t);
+
+    /**
+     * 支付取消的时候会回调
+     */
+    void onCancle();
 }

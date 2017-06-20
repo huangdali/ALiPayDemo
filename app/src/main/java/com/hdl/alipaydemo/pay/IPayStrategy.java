@@ -9,7 +9,7 @@ import com.hdl.alipaydemo.pay.bean.PayCallback;
  * Created by HDL on 2017/6/19.
  */
 
-public interface IPayStrategy {
+public interface IPayStrategy<T> {
 //    /**
 //     * 获取服务器订单信息
 //     *
@@ -23,7 +23,7 @@ public interface IPayStrategy {
      * @param orderInfo 订单信息(此订单信息必须为从服务器获取加密之后的订单信息)
      * @param callback  支付回调{@link PayCallback}
      */
-    void pay(Activity context, String orderInfo, PayCallback callback);
+    void pay(Activity context, T orderInfo, PayCallback callback);
 
 //    /**
 //     * 查询支付结果
